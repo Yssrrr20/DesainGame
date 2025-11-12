@@ -1,26 +1,51 @@
-[gd_scene load_steps=21 format=3 uid="uid://cd4hm604nfxii"]
+[gd_scene load_steps=26 format=3 uid="uid://cd4hm604nfxii"]
 
-[ext_resource type="Texture2D" uid="uid://bsan77dep4y08" path="res://asset/player_nabila/1.png" id="1_rhrp7"]
-[ext_resource type="Texture2D" uid="uid://g6v1qyrl2gl8" path="res://asset/player_nabila/2.png" id="2_ht8km"]
-[ext_resource type="Texture2D" uid="uid://b1j552wmvus3v" path="res://asset/player_nabila/3.png" id="3_xne30"]
-[ext_resource type="Texture2D" uid="uid://5gtfligvnulv" path="res://asset/player_nabila/4.png" id="4_2udmm"]
-[ext_resource type="Texture2D" uid="uid://bgbbmumr8eur" path="res://asset/player_nabila/5.png" id="5_ojcqc"]
-[ext_resource type="Texture2D" uid="uid://dl0u0plsp7vp4" path="res://asset/player_nabila/6.png" id="6_fppp8"]
-[ext_resource type="Texture2D" uid="uid://r2jd4brf7sw3" path="res://asset/player_nabila/7.png" id="7_rbhls"]
-[ext_resource type="Texture2D" uid="uid://cky4kr1j3mufn" path="res://asset/player_nabila/8.png" id="8_bwm27"]
-[ext_resource type="Texture2D" uid="uid://capjb5hupkocl" path="res://asset/player_nabila/9.png" id="9_em75n"]
-[ext_resource type="Texture2D" uid="uid://d03vr43cs3biq" path="res://asset/player_nabila/10.png" id="10_tx7f3"]
-[ext_resource type="Texture2D" uid="uid://dqr6ndhw8cudw" path="res://asset/player_nabila/11.png" id="11_f1lmf"]
-[ext_resource type="Texture2D" uid="uid://di028y4817ibc" path="res://asset/player_nabila/12.png" id="12_e1dpr"]
-[ext_resource type="Texture2D" uid="uid://pjjw6p4mqjuq" path="res://asset/player_nabila/13.png" id="13_sblpr"]
-[ext_resource type="Texture2D" uid="uid://bwu1f6bkr624b" path="res://asset/player_nabila/14.png" id="14_6n6kj"]
-[ext_resource type="Texture2D" uid="uid://2sbhpkq0sksu" path="res://asset/player_nabila/15.png" id="15_c68xy"]
-[ext_resource type="Texture2D" uid="uid://b1lsu7snsa3h0" path="res://asset/player_nabila/16.png" id="16_te68j"]
-[ext_resource type="Texture2D" uid="uid://b1xlmli423s0e" path="res://asset/player_nabila/17.png" id="17_hvi8b"]
-[ext_resource type="Texture2D" uid="uid://ccgyn4gnb5fxj" path="res://asset/player_nabila/18.png" id="18_0f8go"]
+[ext_resource type="Texture2D" uid="uid://dpk0scvv5elvl" path="res://asset/player_nabila/idle/1.png" id="1_e1dpr"]
+[ext_resource type="Texture2D" uid="uid://bsan77dep4y08" path="res://asset/player_nabila/run/1.png" id="1_rhrp7"]
+[ext_resource type="Texture2D" uid="uid://g6v1qyrl2gl8" path="res://asset/player_nabila/run/2.png" id="2_ht8km"]
+[ext_resource type="Texture2D" uid="uid://dis6385t2k8qe" path="res://asset/player_nabila/idle/2.png" id="2_sblpr"]
+[ext_resource type="Texture2D" uid="uid://gkkrvbg61e23" path="res://asset/player_nabila/idle/3.png" id="3_6n6kj"]
+[ext_resource type="Texture2D" uid="uid://b1j552wmvus3v" path="res://asset/player_nabila/run/3.png" id="3_xne30"]
+[ext_resource type="Texture2D" uid="uid://5gtfligvnulv" path="res://asset/player_nabila/run/4.png" id="4_2udmm"]
+[ext_resource type="Texture2D" uid="uid://m6l8k5bacpv1" path="res://asset/player_nabila/idle/4.png" id="4_c68xy"]
+[ext_resource type="Texture2D" uid="uid://bgbbmumr8eur" path="res://asset/player_nabila/run/5.png" id="5_ojcqc"]
+[ext_resource type="Texture2D" uid="uid://bah11dli1bvxc" path="res://asset/player_nabila/idle/5.png" id="5_te68j"]
+[ext_resource type="Texture2D" uid="uid://dl0u0plsp7vp4" path="res://asset/player_nabila/run/6.png" id="6_fppp8"]
+[ext_resource type="Texture2D" uid="uid://r2jd4brf7sw3" path="res://asset/player_nabila/run/7.png" id="7_rbhls"]
+[ext_resource type="Texture2D" uid="uid://cky4kr1j3mufn" path="res://asset/player_nabila/run/8.png" id="8_bwm27"]
+[ext_resource type="Texture2D" uid="uid://capjb5hupkocl" path="res://asset/player_nabila/run/9.png" id="9_em75n"]
+[ext_resource type="Texture2D" uid="uid://d03vr43cs3biq" path="res://asset/player_nabila/run/10.png" id="10_tx7f3"]
+[ext_resource type="Texture2D" uid="uid://dqr6ndhw8cudw" path="res://asset/player_nabila/run/11.png" id="11_f1lmf"]
+[ext_resource type="Texture2D" uid="uid://di028y4817ibc" path="res://asset/player_nabila/run/12.png" id="12_e1dpr"]
+[ext_resource type="Texture2D" uid="uid://pjjw6p4mqjuq" path="res://asset/player_nabila/run/13.png" id="13_sblpr"]
+[ext_resource type="Texture2D" uid="uid://bwu1f6bkr624b" path="res://asset/player_nabila/run/14.png" id="14_6n6kj"]
+[ext_resource type="Texture2D" uid="uid://2sbhpkq0sksu" path="res://asset/player_nabila/run/15.png" id="15_c68xy"]
+[ext_resource type="Texture2D" uid="uid://b1lsu7snsa3h0" path="res://asset/player_nabila/run/16.png" id="16_te68j"]
+[ext_resource type="Texture2D" uid="uid://b1xlmli423s0e" path="res://asset/player_nabila/run/17.png" id="17_hvi8b"]
+[ext_resource type="Texture2D" uid="uid://ccgyn4gnb5fxj" path="res://asset/player_nabila/run/18.png" id="18_0f8go"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l1e51"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_e1dpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sblpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6n6kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c68xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_te68j")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_rhrp7")
@@ -77,22 +102,25 @@ animations = [{
 "texture": ExtResource("18_0f8go")
 }],
 "loop": true,
-"name": &"default",
-"speed": 25.0
+"name": &"Run",
+"speed": 30.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wfifq"]
-radius = 10.049875
+[sub_resource type="CircleShape2D" id="CircleShape2D_fppp8"]
+radius = 8.062258
 
 [node name="player_Nabila" type="CharacterBody2D"]
+z_index = 5
+collision_layer = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(13, -10)
-scale = Vector2(0.028703704, 0.025925927)
+position = Vector2(11.999999, -9)
+scale = Vector2(0.027314812, 0.025503192)
 sprite_frames = SubResource("SpriteFrames_l1e51")
-autoplay = "default"
-frame_progress = 0.53471386
+animation = &"Run"
+autoplay = "Idle"
+frame_progress = 0.6273624
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(13, -10)
-shape = SubResource("CircleShape2D_wfifq")
+position = Vector2(12, -8)
+shape = SubResource("CircleShape2D_fppp8")

@@ -109,7 +109,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fppp8"]
 radius = 8.062258
 
-[node name="player_Nabila" type="CharacterBody2D"]
+[node name="player_Nabila" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
 collision_layer = 2
 

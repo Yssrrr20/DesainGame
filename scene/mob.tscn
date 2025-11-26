@@ -44,6 +44,7 @@ animations = [{
 size = Vector2(10, 15)
 
 [node name="Mob" type="Node2D"]
+position = Vector2(10, 6)
 script = ExtResource("1_0a0b6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

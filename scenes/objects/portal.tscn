@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://nuexjnxolmxw"]
+
+[ext_resource type="Script" uid="uid://bhjg5ekbts2b6" path="res://scripts/portal.gd" id="1_kdtv5"]
+[ext_resource type="Texture2D" uid="uid://do0riyq0bhoud" path="res://assets/sprites/portal.png" id="1_ktdcm"]
+
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdtv5"]
+atlas = ExtResource("1_ktdcm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78wey"]
+atlas = ExtResource("1_ktdcm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv5im"]
+atlas = ExtResource("1_ktdcm")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqygy"]
+atlas = ExtResource("1_ktdcm")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g70x"]
+atlas = ExtResource("1_ktdcm")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neoq6"]
+atlas = ExtResource("1_ktdcm")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm1ei"]
+atlas = ExtResource("1_ktdcm")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijpf1"]
+atlas = ExtResource("1_ktdcm")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxrbd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdtv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78wey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bv5im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqygy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3g70x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neoq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm1ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijpf1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktdcm"]
+
+[node name="Area2D" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_kdtv5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cxrbd")
+autoplay = "default"
+frame_progress = 0.92973286
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 2)
+shape = SubResource("CapsuleShape2D_ktdcm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

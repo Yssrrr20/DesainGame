@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlanm2yb6ist0"]
+
+[ext_resource type="Script" uid="uid://duur0rhjh28gg" path="res://scripts/coin.gd" id="1_nbvjs"]
+[ext_resource type="Texture2D" uid="uid://cd28j4jibwovf" path="res://assets/sprites/apple.png" id="2_df5mh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mp8be"]
+size = Vector2(11, 10.5)
+
+[sub_resource type="Animation" id="Animation_df5mh"]
+resource_name = "idle"
+length = 0.56667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0038013451, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004, 0.43333337, 0.4666667, 0.5, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+}
+
+[sub_resource type="Animation" id="Animation_yi174"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kbrtc"]
+_data = {
+&"RESET": SubResource("Animation_yi174"),
+&"idle": SubResource("Animation_df5mh")
+}
+
+[node name="Apple" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_nbvjs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_df5mh")
+hframes = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_mp8be")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kbrtc")
+}
+autoplay = "idle"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

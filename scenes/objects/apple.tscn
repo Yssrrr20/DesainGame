@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dlanm2yb6ist0"]
 
-[ext_resource type="Script" uid="uid://duur0rhjh28gg" path="res://scripts/coin.gd" id="1_nbvjs"]
+[ext_resource type="Script" uid="uid://duur0rhjh28gg" path="res://scripts/collectible.gd" id="1_nbvjs"]
 [ext_resource type="Texture2D" uid="uid://cd28j4jibwovf" path="res://assets/sprites/apple.png" id="2_df5mh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mp8be"]

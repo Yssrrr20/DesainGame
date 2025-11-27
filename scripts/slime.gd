@@ -15,3 +15,7 @@ func flip_direction():
 	super.flip_direction()
 	
 	raycasts.scale.x *= -1
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	get_tree().reload_current_scene() # Replace with function body.

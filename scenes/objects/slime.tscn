@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddlt62ock3pua"]
+[gd_scene load_steps=10 format=3 uid="uid://ddlt62ock3pua"]
 
 [ext_resource type="Script" uid="uid://dsuilgxcu7tr1" path="res://scripts/slime.gd" id="1_q2f8i"]
 [ext_resource type="Texture2D" uid="uid://b6ujqkdxk73c6" path="res://assets/sprites/slime.png" id="2_q2f8i"]
@@ -65,6 +65,9 @@ _data = {
 radius = 13.0
 height = 31.999998
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82kmp"]
+radius = 2.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q574h"]
 
 [node name="Slime" type="CharacterBody2D"]
@@ -93,10 +96,19 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -23)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_82kmp")
+debug_color = Color(0.5882347, 0.54845023, 1.92523e-07, 0.41960785)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -13)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_q574h")
-debug_color = Color(0.9941439, 0, 0.23392454, 0.41960785)
+debug_color = Color(1, 0.034174327, 0.04016338, 0.41960785)
 
 [node name="raycasts" type="Node2D" parent="."]
 
@@ -110,3 +122,5 @@ position = Vector2(-21, -7)
 rotation = -1.5707964
 target_position = Vector2(-10, 0)
 collision_mask = 2
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

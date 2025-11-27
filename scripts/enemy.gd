@@ -132,19 +132,8 @@ func attack_player():
 
 # Change the state of the enemy
 func set_state(new_state : EnemyState):
-	if state != new_state:
-		state = new_state
-		match state:
-			EnemyState.IDLE:
-				print("Enemy is now IDLE")
-			EnemyState.PATROLLING:
-				print("Enemy is now PATROLLING")
-			EnemyState.CHASING:
-				print("Enemy is now CHASING")
-			EnemyState.ATTACKING:
-				print("Enemy is now ATTACKING")
-			EnemyState.DEAD:
-				print("Enemy is now DEAD")
+	state = new_state
+
 
 func flip_direction():
 	direction *= -1

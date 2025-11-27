@@ -48,9 +48,9 @@ func state_idle():
 	if Input.is_action_just_pressed("jump"):
 		start_jump()
 	elif dir != 0:
-		switch_state(State.RUN)
+		set_state(State.RUN)
 	elif not is_on_floor():
-		switch_state(State.FALL)
+		set_state(State.FALL)
 
 
 func state_run():
@@ -58,7 +58,7 @@ func state_run():
 
 	var dir := Input.get_axis("move_left", "move_right")
 	if dir == 0:
-		switch_state(State.IDLE)
+		set_state(State.IDLE)
 	else:
 		velocity.x = dir * speed
 		sprite.flip_h = dir < 0
@@ -66,7 +66,7 @@ func state_run():
 	if Input.is_action_just_pressed("jump"):
 		start_jump()
 	elif not is_on_floor():
-		switch_state(State.FALL)
+		set_state(State.FALL)
 
 
 func state_jump():
@@ -79,7 +79,7 @@ func state_jump():
 		sprite.flip_h = dir < 0
 
 	if velocity.y > 0:
-		switch_state(State.FALL)
+		set_state(State.FALL)
 
 
 func state_fall():
@@ -90,9 +90,9 @@ func state_fall():
 
 	if is_on_floor():
 		if dir == 0:
-			switch_state(State.IDLE)
+			set_state(State.IDLE)
 		else:
-			switch_state(State.RUN)
+			set_state(State.RUN)
 
 
 # ---------------------------------------------------------
@@ -104,10 +104,10 @@ func process_gravity(delta: float) -> void:
 
 func start_jump():
 	velocity.y = jump_velocity
-	switch_state(State.JUMP)
+	set_state(State.JUMP)
 
 
-func switch_state(new_state: State):
+func set_state(new_state: State):
 	state = new_state
 
 
@@ -116,5 +116,5 @@ func switch_state(new_state: State):
 # ---------------------------------------------------------
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	print("Player Hurt")
-	get_tree().reload_current_scene()
+	start_jump()
+	area.get_parent().queue_free()

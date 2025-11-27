@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfns0wsg1u7g0"]
+[gd_scene load_steps=13 format=3 uid="uid://dfns0wsg1u7g0"]
 
 [ext_resource type="Script" uid="uid://cn0ajrji81vxv" path="res://scripts/player.gd" id="1_2147m"]
 [ext_resource type="Texture2D" uid="uid://coyo8nv7sj52p" path="res://assets/sprites/player.png" id="2_2147m"]
@@ -101,8 +101,12 @@ height = 24.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h5uus"]
 height = 22.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5uus"]
-size = Vector2(24, 24)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_54rde"]
+radius = 1.0
+height = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2147m"]
+radius = 15.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 0
@@ -126,22 +130,31 @@ autoplay = "idle"
 position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_2147m")
 
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_h5uus")
+debug_color = Color(0.6870819, 0.5016257, 0, 0.41960785)
+
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -12)
-shape = SubResource("CapsuleShape2D_h5uus")
-debug_color = Color(0.99856573, 0, 0.15039015, 0.41960785)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_54rde")
+debug_color = Color(0.9966789, 0, 0.19095874, 0.41960785)
 
 [node name="Interactor" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor"]
+visible = false
 position = Vector2(0, -12)
-shape = SubResource("RectangleShape2D_h5uus")
-debug_color = Color(0, 0.6505523, 0.10425315, 0.41960785)
+shape = SubResource("CircleShape2D_2147m")
+debug_color = Color(1, 1, 1, 0.41960785)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

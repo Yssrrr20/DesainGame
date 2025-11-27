@@ -4,8 +4,8 @@ extends CharacterBody2D
 
 @export var health := 100
 @export var speed := 60.0
-@export var detection_range := 200.0  # How far the enemy can detect the player
-@export var attack_range := 40.0  # Distance at which the enemy can attack the player
+@export var detection_range := 50.0
+@export var attack_range := 5.0
 
 # States
 enum EnemyState {

@@ -45,3 +45,7 @@ move_right={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/size/borderless=false
+2d/stretch/mode="disabled"
+2d/stretch/scale=1.0
+2d/stretch/aspect="keep"

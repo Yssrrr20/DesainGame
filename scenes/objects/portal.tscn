@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bhjg5ekbts2b6" path="res://scripts/portal.gd" id="1_kdtv5"]
 [ext_resource type="Texture2D" uid="uid://do0riyq0bhoud" path="res://assets/sprites/portal.png" id="1_ktdcm"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdtv5"]
 atlas = ExtResource("1_ktdcm")
 region = Rect2(0, 0, 64, 64)
@@ -71,7 +70,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktdcm"]
 
 [node name="Area2D" type="Area2D"]
-collision_mask = 2
+collision_layer = 0
 script = ExtResource("1_kdtv5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

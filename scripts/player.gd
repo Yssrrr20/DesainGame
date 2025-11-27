@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
-const JUMP_VELOCITY = -300.0
+@export var speed = 200.0
+@export var jump_velocity = -300.0
 
 enum State { IDLE, RUN, JUMP, FALL }
 
@@ -41,7 +41,7 @@ func process_state(delta: float) -> void:
 
 func state_idle():
 	animationPlayer.play("idle")
-	velocity.x = move_toward(velocity.x, 0, SPEED)
+	velocity.x = move_toward(velocity.x, 0, speed)
 
 	var dir := Input.get_axis("move_left", "move_right")
 
@@ -60,7 +60,7 @@ func state_run():
 	if dir == 0:
 		switch_state(State.IDLE)
 	else:
-		velocity.x = dir * SPEED
+		velocity.x = dir * speed
 		sprite.flip_h = dir < 0
 
 	if Input.is_action_just_pressed("jump"):
@@ -75,7 +75,7 @@ func state_jump():
 	var dir := Input.get_axis("move_left", "move_right")
 
 	if dir:
-		velocity.x = dir * SPEED
+		velocity.x = dir * speed
 		sprite.flip_h = dir < 0
 
 	if velocity.y > 0:
@@ -86,7 +86,7 @@ func state_fall():
 	animationPlayer.play("fall")
 
 	var dir := Input.get_axis("move_left", "move_right")
-	velocity.x = dir * SPEED
+	velocity.x = dir * speed
 
 	if is_on_floor():
 		if dir == 0:
@@ -103,9 +103,18 @@ func process_gravity(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 func start_jump():
-	velocity.y = JUMP_VELOCITY
+	velocity.y = jump_velocity
 	switch_state(State.JUMP)
 
 
 func switch_state(new_state: State):
 	state = new_state
+
+
+# ---------------------------------------------------------
+# SIGNALS
+# ---------------------------------------------------------
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	print("Player Hurt")
+	get_tree().reload_current_scene()

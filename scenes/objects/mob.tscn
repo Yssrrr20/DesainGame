@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bwlpdvsc0e2dt"]
 
 [ext_resource type="Script" uid="uid://c3egbf252l82g" path="res://scripts/mob.gd" id="1_0a0b6"]
-[ext_resource type="Texture2D" uid="uid://bxgbekogygs1a" path="res://assets/Tiles Template/slime_green.png" id="1_8jgfq"]
+[ext_resource type="Texture2D" uid="uid://bxgbekogygs1a" path="res://assets/tiles/slime_green.png" id="1_8jgfq"]
 [ext_resource type="PackedScene" uid="uid://de5byyog45fa8" path="res://scenes/objects/killzone.tscn" id="2_rtm52"]
 
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cxyaa8c7vgwfp"]
 
-[ext_resource type="Texture2D" uid="uid://bxgbekogygs1a" path="res://assets/Tiles Template/slime_green.png" id="1_h08p8"]
+[ext_resource type="Texture2D" uid="uid://bxgbekogygs1a" path="res://assets/tiles/slime_green.png" id="1_h08p8"]
 
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h08p8"]

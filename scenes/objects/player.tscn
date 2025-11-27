@@ -95,8 +95,8 @@ _data = {
 &"run": SubResource("Animation_54rde")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_54rde"]
-size = Vector2(20, 22)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2147m"]
+height = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2147m"]
 size = Vector2(18, 19)
@@ -122,8 +122,8 @@ libraries = {
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11)
-shape = SubResource("RectangleShape2D_54rde")
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_2147m")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 0
@@ -139,6 +139,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor"]
+visible = false
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_h5uus")
 debug_color = Color(0, 0.6505523, 0.10425315, 0.41960785)

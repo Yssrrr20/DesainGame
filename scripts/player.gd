@@ -7,6 +7,9 @@ enum State { IDLE, RUN, JUMP, FALL }
 
 var state: State = State.IDLE
 
+var score: int = 0
+signal score_changed(new_score)
+
 @onready var sprite: Sprite2D = $Sprite
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 
@@ -110,6 +113,9 @@ func start_jump():
 func set_state(new_state: State):
 	state = new_state
 
+func add_score(amount: int):
+	score += amount
+	emit_signal("score_changed", score)
 
 # ---------------------------------------------------------
 # SIGNALS
@@ -118,3 +124,6 @@ func set_state(new_state: State):
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	start_jump()
 	area.get_parent().queue_free()
+
+func _on_death_zone_area_entered(area: Area2D) -> void:
+	get_tree().reload_current_scene()

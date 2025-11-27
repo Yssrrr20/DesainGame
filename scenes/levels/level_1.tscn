@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://b3t4h83qh032c"]
+[gd_scene load_steps=42 format=4 uid="uid://b3t4h83qh032c"]
 
 [ext_resource type="Texture2D" uid="uid://dx4xn6lys5v0d" path="res://assets/tiles/Sky.png" id="1_gmpev"]
 [ext_resource type="Texture2D" uid="uid://p0pxfv3jagaj" path="res://assets/tiles/Hills_1.png" id="2_mkypq"]
@@ -14,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://cuu60gqwilxjn" path="res://assets/sprites/terrain.png" id="12_bahl2"]
 [ext_resource type="PackedScene" uid="uid://dlanm2yb6ist0" path="res://scenes/objects/apple.tscn" id="16_o8s4s"]
 [ext_resource type="PackedScene" uid="uid://dfns0wsg1u7g0" path="res://scenes/objects/player.tscn" id="17_bahl2"]
+[ext_resource type="Texture2D" uid="uid://cd28j4jibwovf" path="res://assets/sprites/apple.png" id="18_gmpev"]
 [ext_resource type="PackedScene" uid="uid://ddlt62ock3pua" path="res://scenes/objects/slime.tscn" id="18_np2pn"]
 [ext_resource type="PackedScene" uid="uid://dgrgc410pwi6q" path="res://scenes/objects/platform.tscn" id="18_row31"]
+[ext_resource type="Script" uid="uid://cr2p7xxpe0vjw" path="res://scripts/score.gd" id="18_v6ha0"]
 [ext_resource type="PackedScene" uid="uid://nuexjnxolmxw" path="res://scenes/objects/portal.tscn" id="19_ytidy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0lu6w"]
@@ -18327,6 +18329,13 @@ _data = {
 &"animation": SubResource("Animation_1it6f")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bahl2"]
+size = Vector2(2225, 332)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6ha0"]
+atlas = ExtResource("18_gmpev")
+region = Rect2(512, 0, 32, 32)
+
 [node name="Level 1" type="Node2D"]
 
 [node name="Background" type="Node2D" parent="."]
@@ -18501,3 +18510,35 @@ position = Vector2(1448, 424)
 
 [node name="Apple21" parent="Apples" instance=ExtResource("16_o8s4s")]
 position = Vector2(1448, 408)
+
+[node name="DeathZone" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(970, 1152)
+shape = SubResource("RectangleShape2D_bahl2")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -60.0
+offset_right = 56.0
+offset_bottom = -20.0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+
+[node name="AppleIcon" type="TextureRect" parent="UI/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_v6ha0")
+
+[node name="ScoreLabel" type="Label" parent="UI/HBoxContainer"]
+layout_mode = 2
+text = "0"
+script = ExtResource("18_v6ha0")
+
+[connection signal="score_changed" from="Player" to="UI/HBoxContainer/ScoreLabel" method="_on_player_score_changed"]
+[connection signal="area_entered" from="DeathZone" to="Player" method="_on_death_zone_area_entered"]

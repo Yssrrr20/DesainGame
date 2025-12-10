@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=22 format=4 uid="uid://b3t4h83qh032c"]
-=======
 [gd_scene load_steps=42 format=4 uid="uid://b3t4h83qh032c"]
->>>>>>> 3c544f3bc6d85710fcc35cd9089d286b5f5fb6c2
 
 [ext_resource type="Texture2D" uid="uid://dx4xn6lys5v0d" path="res://assets/tiles/Sky.png" id="1_gmpev"]
 [ext_resource type="Texture2D" uid="uid://p0pxfv3jagaj" path="res://assets/tiles/Hills_1.png" id="2_mkypq"]

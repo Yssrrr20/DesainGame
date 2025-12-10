@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://b3t4h83qh032c"]
+[gd_scene load_steps=27 format=4 uid="uid://b3t4h83qh032c"]
 
 [ext_resource type="Texture2D" uid="uid://dx4xn6lys5v0d" path="res://assets/tiles/Sky.png" id="1_gmpev"]
 [ext_resource type="Texture2D" uid="uid://p0pxfv3jagaj" path="res://assets/tiles/Hills_1.png" id="2_mkypq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://g0j0a3bkgbd8" path="res://assets/tiles/Mountain_3.png" id="8_31oqk"]
 [ext_resource type="Texture2D" uid="uid://b21dkqmfqle4m" path="res://assets/tiles/Mountain_4.png" id="9_x7jkp"]
 [ext_resource type="Texture2D" uid="uid://cuu60gqwilxjn" path="res://assets/sprites/terrain.png" id="12_bahl2"]
+[ext_resource type="PackedScene" uid="uid://bqju1yeq10t8d" path="res://scenes/Music/music_bg.tscn" id="16_iwr0g"]
 [ext_resource type="PackedScene" uid="uid://dlanm2yb6ist0" path="res://scenes/objects/apple.tscn" id="16_o8s4s"]
 [ext_resource type="PackedScene" uid="uid://dfns0wsg1u7g0" path="res://scenes/objects/player.tscn" id="17_bahl2"]
 [ext_resource type="Texture2D" uid="uid://cd28j4jibwovf" path="res://assets/sprites/apple.png" id="18_gmpev"]
@@ -451,6 +452,8 @@ texture = SubResource("AtlasTexture_v6ha0")
 layout_mode = 2
 text = "0"
 script = ExtResource("18_v6ha0")
+
+[node name="Music BG" parent="." instance=ExtResource("16_iwr0g")]
 
 [connection signal="score_changed" from="Player" to="UI/HBoxContainer/ScoreLabel" method="_on_player_score_changed"]
 [connection signal="area_entered" from="DeathZone" to="Player" method="_on_death_zone_area_entered"]

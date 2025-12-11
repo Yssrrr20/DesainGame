@@ -157,3 +157,4 @@ shape = SubResource("CircleShape2D_2147m")
 debug_color = Color(1, 1, 1, 0.41960785)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
